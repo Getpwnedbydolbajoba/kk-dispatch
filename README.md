@@ -7,7 +7,7 @@
 #### Usage
 
 ```lua
--- Response specifies if client who triggered sendDispatch gets a response if somebody is responding to he's call.
+-- "response" specifies if client who triggered sendDispatch gets a response if somebody is responding to he's call.
 TriggerEvent('kk-dispatch:client:sendDispatch', '10-99', 'police', 'Officer down', response)
 
 ```
