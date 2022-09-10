@@ -1,6 +1,4 @@
-local data = {}
-local phoneNumbers = {}
-local ox_inventory = exports.ox_inventory
+local data = {}; local phoneNumbers = {}
 
 local function registerCmd(table)
     phoneNumbers[string.lower(table.name)] = {}
@@ -29,12 +27,6 @@ local function registerCmd(table)
     end, false)
 end
 
-local function getCalls()
-    return data
-end
-
-exports('getCalls', getCalls)
-
 lib.callback.register('kk-dispatch:loadCalls', function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -43,7 +35,7 @@ end)
 
 AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)
     for k,v in pairs(phoneNumbers) do
-        TriggerClientEvent('chat:addSuggestion', playerId, '/' .. k, 'Saada sisestatud tööle töösõnum.', {
+        TriggerClientEvent('chat:addSuggestion', playerId, '/' .. k, 'Send message to specific job.', {
             { name="sisu" }
         }) 
     end
@@ -91,8 +83,7 @@ RegisterServerEvent('kk-dispatch:server:acceptCall', function(id)
     end
 end)
 
-RegisterServerEvent('kk-dispatch:server:alert')
-AddEventHandler('kk-dispatch:server:alert', function(job, info)
+RegisterServerEvent('kk-dispatch:server:alert', function(job, info)
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
 

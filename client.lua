@@ -27,7 +27,7 @@ end)
 
 RegisterNetEvent('esx:setJob', function(job)
 	ESX.PlayerData.job = job; SendNUIMessage({action = 'closeDispatch'})
-end) 
+end)
 
 RegisterNetEvent('kk-dispatch:client:setMarker', function(coords)
     SetNewWaypoint(coords.x, coords.y)
